@@ -1,0 +1,262 @@
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: #f5f5f5;
+  background-color: #050608;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(circle at top, #111827 0, #050608 50%, #020308 100%);
+  color: #f9fafb;
+  padding: 24px clamp(20px, 5vw, 48px);
+}
+
+/* Top bar */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 48px;       /* ajustable */
+  height: auto;
+  display: block;
+  transform: rotate(7deg);
+  transform-origin: center;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
+  color: #f9fafb;
+}
+
+.logo-mark {
+  width: 22px;
+  height: 10px;
+  border-radius: 999px;
+  background: #f9fafb;
+}
+
+.logo-text {
+  font-weight: 600;
+}
+
+/* Hero */
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: clamp(32px, 8vw, 64px);
+  align-items: center;
+  padding: clamp(40px, 10vh, 80px) 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-content {
+  max-width: 560px;
+}
+
+.tagline {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #9ca3af;
+  margin: 0 0 12px;
+}
+
+.headline {
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 18px;
+}
+
+.subcopy {
+  margin: 0 0 28px;
+  max-width: 460px;
+  color: #d1d5db;
+  font-size: 15px;
+}
+
+/* Form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.input {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 12px 14px;
+  border-radius: 999px;
+  border: 1px solid #374151;
+  background: rgba(15, 23, 42, 0.8);
+  color: #f9fafb;
+  outline: none;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: #6b7280;
+}
+
+.input:focus {
+  border-color: #e5e7eb;
+  box-shadow: 0 0 0 1px #e5e7eb33;
+}
+
+.button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+  color: #020617;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.1s ease;
+  white-space: nowrap;
+}
+
+.button:hover {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.helper {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.error {
+  font-size: 13px;
+  color: #fecaca;
+}
+
+.success {
+  font-size: 14px;
+  color: #bbf7d0;
+}
+
+/* Card derecha */
+
+.hero-card {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: min(420px, 100%);
+  padding: 18px 24px 20px;
+  border-radius: 28px;
+  background: radial-gradient(circle at top left, #111827 0, #020617 55%, #000000 100%);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  overflow: hidden;
+}
+
+.stroke {
+  width: 120px;
+  height: 30px;
+  border-radius: 999px;
+  background: #f9fafb;
+  margin-bottom: 32px;
+}
+
+.card-logo {
+  width: 110px;                 /* ajustable */
+  height: auto;
+  transform: rotate(10deg);    /* misma inclinación que arriba */
+  transform-origin: center;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.6));
+  margin-bottom: -12px;
+}
+
+.card-title {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.card-sub {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: #6b7280;
+  padding-top: 24px;
+  border-top: 1px solid rgba(31, 41, 55, 0.8);
+}
+
+@media (max-width: 640px) {
+  .footer {
+    flex-direction: column;
+  }
+}
