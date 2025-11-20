@@ -25,7 +25,7 @@ const handleSubmit = async () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: email.value }),
+      body: JSON.stringify({ email: email.value.trim() }),
     })
 
     submitted.value = true
