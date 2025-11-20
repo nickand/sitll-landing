@@ -7,7 +7,7 @@ const submitted = ref(false)
 const error = ref('')
 
 // 👇 Pon aquí tu webhook de Make / backend / lo que uses
-const WEBHOOK_URL = 'https://your-webhook-url-here'
+const WEBHOOK_URL = 'https://hook.us2.make.com/tibjcootr0umiq97tv5k593bw6p3nciy'
 
 const handleSubmit = async () => {
   error.value = ''
